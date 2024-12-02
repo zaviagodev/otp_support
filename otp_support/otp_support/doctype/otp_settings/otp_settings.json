@@ -1,0 +1,184 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "creation": "2024-11-28 14:52:49.340942",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "globals_section",
+  "otp_gateway_host",
+  "receiver_parameter",
+  "with_country_code",
+  "otp_validity_in_mins",
+  "static_parameters_section",
+  "parameters",
+  "otp_request_section",
+  "api_route_request",
+  "message_parameter",
+  "referencesupport_property",
+  "use_post_when_requesting",
+  "column_break_llcz",
+  "parameters_when_requesting",
+  "otp_verification_section",
+  "api_route_verification",
+  "otp_parameter",
+  "referencesupporting_parameter",
+  "validation_property",
+  "use_post_when_verifying",
+  "column_break_pozc",
+  "parameters_when_verifying"
+ ],
+ "fields": [
+  {
+   "description": "Enter url parameter for message",
+   "fieldname": "message_parameter",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Message Parameter",
+   "reqd": 1
+  },
+  {
+   "description": "Enter url parameter for receiver nos",
+   "fieldname": "receiver_parameter",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Receiver Parameter",
+   "reqd": 1
+  },
+  {
+   "fieldname": "static_parameters_section",
+   "fieldtype": "Column Break",
+   "width": "50%"
+  },
+  {
+   "description": "Enter static url parameters here (Eg. sender=ERPNext, username=ERPNext, password=1234 etc.)",
+   "fieldname": "parameters",
+   "fieldtype": "Table",
+   "label": "Static Parameters",
+   "options": "SMS Parameter"
+  },
+  {
+   "fieldname": "globals_section",
+   "fieldtype": "Section Break",
+   "label": "Globals"
+  },
+  {
+   "description": "Eg. smsgateway.com/api/send_sms.cgi",
+   "fieldname": "otp_gateway_host",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "OTP Gateway Host",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "with_country_code",
+   "fieldtype": "Check",
+   "label": "With Country code"
+  },
+  {
+   "fieldname": "otp_request_section",
+   "fieldtype": "Section Break",
+   "label": "OTP Request"
+  },
+  {
+   "fieldname": "api_route_request",
+   "fieldtype": "Data",
+   "label": "API route (request)"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_post_when_requesting",
+   "fieldtype": "Check",
+   "label": "Use POST"
+  },
+  {
+   "fieldname": "otp_verification_section",
+   "fieldtype": "Section Break",
+   "label": "OTP Verification"
+  },
+  {
+   "fieldname": "api_route_verification",
+   "fieldtype": "Data",
+   "label": "API route (verification)"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_post_when_verifying",
+   "fieldtype": "Check",
+   "label": "Use POST"
+  },
+  {
+   "fieldname": "column_break_llcz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parameters_when_requesting",
+   "fieldtype": "Table",
+   "label": "Static Parameters",
+   "options": "SMS Parameter"
+  },
+  {
+   "fieldname": "column_break_pozc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parameters_when_verifying",
+   "fieldtype": "Table",
+   "label": "Static Parameters",
+   "options": "SMS Parameter"
+  },
+  {
+   "fieldname": "otp_parameter",
+   "fieldtype": "Data",
+   "label": "OTP Parameter",
+   "reqd": 1
+  },
+  {
+   "fieldname": "referencesupporting_parameter",
+   "fieldtype": "Data",
+   "label": "Reference/Supporting Parameter"
+  },
+  {
+   "description": "use to keep reference which can be used at verification time.",
+   "fieldname": "referencesupport_property",
+   "fieldtype": "Data",
+   "label": "Reference/Support Property"
+  },
+  {
+   "description": "confirms if the top entered was valid or not",
+   "fieldname": "validation_property",
+   "fieldtype": "Data",
+   "label": "Validation Property"
+  },
+  {
+   "default": "5",
+   "fieldname": "otp_validity_in_mins",
+   "fieldtype": "Float",
+   "label": "OTP validity in mins",
+   "non_negative": 1
+  }
+ ],
+ "icon": "fa fa-cog",
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-12-02 10:57:05.785598",
+ "modified_by": "Administrator",
+ "module": "Otp Support",
+ "name": "OTP Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
