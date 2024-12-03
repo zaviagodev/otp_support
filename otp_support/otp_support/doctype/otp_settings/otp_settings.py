@@ -103,7 +103,7 @@ class OTPSettings(Document):
         else:
             is_valid = True
 
-        if type(is_valid) is bool and is_valid or "success" in is_valid.lower():
+        if type(is_valid) is bool and is_valid or type(is_valid) is str and "success" in is_valid.lower():
             frappe.cache().delete(f"phone_verification_otp:{phone}")
             return True
         else:
@@ -124,8 +124,6 @@ def extract_prop(dict, prop):
             dict = dict[nested_prop]
         else:
             dict = dict.get(nested_prop)
-        if not dict:
-            return None
     return dict
 
 
